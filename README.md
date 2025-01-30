@@ -47,8 +47,8 @@ This is a personal portfolio website built using **Django**. It showcases projec
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Alirezz2020/weather-app.git
-    cd weather-app
+    git clone https://github.com/Alirezz2020/Portfolio.git
+    cd Portfolio
     ```
 
 2. Set up a virtual environment (optional but recommended):
