@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2>{{ post.title }}</h2>
+            <p class="text-muted">Published on : {{ post.created_at }}</p>
+            <hr>
+
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-3" style="max-height: 400px;">
+            {% endif %}
+
+            <p>{{ post.content }}</p>
+            <hr>
+            <br>
+
+            <a href="{% url 'core:home' %}" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

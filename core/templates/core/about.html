@@ -1,21 +1,27 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-6">
-            <h2>About Me</h2>
-            <p>
-                Hello! I'm a web developer with a passion for creating interactive and user-friendly web applications.
-                I specialize in Django and front-end technologies like HTML, CSS, JavaScript, and Bootstrap.
-            </p>
-            <p>
-                I enjoy solving problems, learning new technologies, and working with teams to bring ideas to life.
-                In my spare time, I love exploring new places, reading, and contributing to open-source projects.
-            </p>
+<div class="container about-container">
+    <div class="row align-items-center">
+        <!-- Profile Image -->
+        <div class="col-md-4 text-center">
+            <img src="{% static 'images/nc.jpg' %}" alt="Your Name" class="profile-img">
         </div>
-        <div class="col-lg-6">
-            <img src="https://via.placeholder.com/400x400" alt="Profile Picture" class="img-fluid rounded-circle">
+
+        <!-- About Section -->
+        <div class="col-md-8">
+            <h2 class="fade-in">About Me</h2>
+            <p class="fade-in">
+                Hi, I'm <strong>Your Name</strong>, a passionate web developer specializing in Django and modern JavaScript.
+                I love building innovative and user-friendly applications.
+            </p>
+            <p class="fade-in">
+                My expertise includes Django, JavaScript, React, and CSS. I am always eager to learn new technologies and take on exciting projects.
+            </p>
+
+            <!-- Resume Download -->
+            <a href="#" download class="btn btn-primary fade-in">Download My Resume</a>
+{#              <a href="{% static 'resume.pdf' %}" download class="btn btn-primary fade-in">Download My Resume</a>#}
         </div>
     </div>
 </div>

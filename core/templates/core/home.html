@@ -1,19 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">My Project</h5>
-                    <p class="card-text">This is a description of my amazing project.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
+
+<div class="container">
+    <h1>Welcome to My Portfolio!</h1>
+    <p>I'm glad you're here! Feel free to explore my work, contact me, and learn more about my skills and projects.</p>
+</div>
+    <hr>
+    <br><br><br>
+
+<div class="container mt-4">
+    <h2>My Posts & Thoughts</h2>
+    <hr>
+
+    {% for post in posts %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4><a href="{% url 'core:post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
+                <p class="text-muted">{{ post.created_at }}</p>
+                <p>{{ post.content|truncatewords:30 }}</p>  <!-- Shows only first 30 words -->
             </div>
         </div>
-        <!-- Add more cards or sections here -->
-    </div>
+        <hr>
+    {% empty %}
+        <hr>
+        <p>No posts available.</p>
+    {% endfor %}
+
+    <!-- Include Pagination -->
+    {% include 'pagination.html' %}
 </div>
 {% endblock %}

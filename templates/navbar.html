@@ -1,5 +1,14 @@
 <header>
     <nav>
+        
+    <!-- Search Form -->
+    <form class="d-flex" method="GET" action="{% url 'core:home' %}">
+        <input class="form-control me-2" type="search" placeholder="Search posts..." name="q" value="{{ request.GET.q }}">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <br>
+
+        
         <ul>
             <li><a href="{% url 'core:home' %}">Home</a></li>
             <li><a href="{% url 'core:about' %}">About</a></li>
